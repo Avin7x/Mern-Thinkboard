@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/notes");
+        const res = await fetch("/api/notes");
 
         if(res.status==429){
           setIsRateLimited(true);

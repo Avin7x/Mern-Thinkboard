@@ -10,12 +10,12 @@ const NoteDetailPage = () => {
 
   const navigate = useNavigate();
   const { id } = useParams();
-
+  
  
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/notes/${id}`);
+        const res = await fetch(`/api/notes/${id}`);
         const data = await res.json();
         setNote(data);
         console.log(data);
@@ -34,7 +34,7 @@ const NoteDetailPage = () => {
    const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
     try {
-      const res = await fetch(`http://localhost:5001/api/notes/${id}`, {
+      const res = await fetch(`/api/notes/${id}`, {
         method: "DELETE",
       });
 
@@ -60,7 +60,7 @@ const NoteDetailPage = () => {
     setSaving(true);
 
     try {
-      const res = await fetch(`http://localhost:5001/api/notes/${id}`, {
+      const res = await fetch(`/api/notes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

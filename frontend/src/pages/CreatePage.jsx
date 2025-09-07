@@ -19,7 +19,7 @@ const CreatePage = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5001/api/notes", {
+      const res = await fetch("/api/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
