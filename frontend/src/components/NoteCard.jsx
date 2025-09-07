@@ -11,7 +11,7 @@ const NoteCard = ({note, setNotes}) => {
 
         if(!window.confirm("Are you sure you want to delete this note?")) return
         try {
-            const res = await fetch(`http://localhost:5001/api/notes/${id}`, {
+            const res = await fetch(`/api/notes/${id}`, {
                 method: "DELETE",
             });
 
